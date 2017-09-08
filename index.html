@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="node_modules/impress.js/css/impress-demo.css" rel="stylesheet">
+    <link href="styles/myCss.css" rel="stylesheet">
     <style>
         #title q h5 {
             text-align: center;
@@ -121,45 +122,74 @@
                 git log --oneline --all --pretty=format:"%h %cd %s (%an) %d" --since="1 days ago"
                 <span>affiche les derniers commits dans les 5 dernieres minutes</span>
             </p>
-
-            <!-- layer 7 -->
-            <div id="layer-7" class="step slide" data-x="7000">
-                <h1>Format log</h1>
-                <ul>
-                    <li>--pretty="..." format de sortie</li>
-                    <li>%h abbreviation hash code commit</li>
-                    <li>%d commit decoration</li>
-                    <li>%ad commit date</li>
-                    <li>%s commentaires</li>
-                    <li>%an author name</li>
-                    <li>--graph commit tree</li>
-                    <li>--date=...</li>
-                </ul>
-            </div>
-
-            <!-- layer 8 -->
-            <div id="layer-8" class="step slide" data-x="8000">
-                <h1>Version...</h1>
-                <p>
-                    git tag
-                    <span>affichage des releases</span>
-                </p>
-                <p>
-                    git tag -a "your message"
-                    <span>creation d'une release</span>
-                </p>
-            </div>
+        </div>
+        <!-- layer 7 -->
+        <div id="layer-7" class="step slide" data-x="7000">
+            <h1>Format log</h1>
+            <ul>
+                <li>--pretty="..." format de sortie</li>
+                <li>%h abbreviation hash code commit</li>
+                <li>%d commit decoration</li>
+                <li>%ad commit date</li>
+                <li>%s commentaires</li>
+                <li>%an author name</li>
+                <li>--graph commit tree</li>
+                <li>--date=...</li>
+            </ul>
         </div>
 
-        <script src="node_modules/impress.js/js/impress.js"></script>
-        <script>
-            var rootElement = document.querySelector("#impress");
-            rootElement.addEventListener("impress:init", function () {
-                console.log("impress run")
-            })
+        <!-- layer 8 -->
+        <div id="layer-8" class="step slide" data-x="8000">
+            <h1>Version...</h1>
+            <p>
+                git tag
+                <span>affichage des releases</span>
+            </p>
+            <p>
+                git tag -a "your message"
+                <span>creation d'une release</span>
+            </p>
+        </div>
 
-            impress().init();
-        </script>
+        <!-- layer 9 -->
+        <div id="layer-9" class="step slide" data-x="9000">
+            <h1>Branche</h1>
+            <p>
+                git branch <strong>&lt;branchName&gt;</strong>
+                <span>Création d'une branche</span>
+            </p>
+            <p>
+                git checkout <strong>&lt;branchName&gt;</strong>
+                <span>Connexion a une branche</span>
+            </p>
+            <p>
+                git checkout -b <strong>&lt;branchName&gt;</strong>
+                <span>Creation et Connexion a une branche</span>
+            </p>
+            <p>
+                git branch -d ou-D <strong>&lt;branchName&gt;</strong>
+                <span>Suppression d'une branche -d analyse des commits de la branche et -D force delete</span>
+            </p>
+            <p>
+                git branch>
+                <span>Liste des branches</span>
+            </p>
+            <p>
+                git merge <strong>&lt;branchName&gt;</strong>
+                <span>Fusion de branches</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="node_modules/impress.js/js/impress.js"></script>
+    <script>
+        var rootElement = document.querySelector("#impress");
+        rootElement.addEventListener("impress:init", function () {
+            console.log("impress run")
+        })
+
+        impress().init();
+    </script>
 </body>
 
 </html>
