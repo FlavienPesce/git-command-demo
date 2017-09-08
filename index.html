@@ -83,23 +83,83 @@
 
         <!-- layer 5 -->
         <div id="layer-5" class="step slide" data-x="5000">
-            <h1>Redact commit message</h1>
+            <h1>Affichage log</h1>
             <ul>
                 <li>calque: </li>
                 <li>ajouter un nouveau claque à mon fichier index.html</li>
             </ul>
         </div>
-    </div>
 
-    <script src="node_modules/impress.js/js/impress.js"></script>
-    <script>
-        var rootElement = document.querySelector("#impress");
-        rootElement.addEventListener("impress:init", function () {
-            console.log("impress run")
-        })
+        <!-- layer 6 -->
+        <div id="layer-6" class="step slide" data-x="6000">
+            <h1>Affichage log</h1>
+            <p>
+                git log
+                <span>affiche le dernier commit</span>
+            </p>
+            <p>
+                git log -1
+                <span>affiche le dernier commit</span>
+            </p>
+            <p>
+                git log --pretty=oneline --max-count=2
+                <span>affiche sur une ligne les deux dernier commits</span>
+            </p>
+            <p>
+                git log --pretty=oneline --since="5 minutes ago"
+                <span>affiche les derniers commits dans les 5 dernieres minutes</span>
+            </p>
+            <p>
+                git log --pretty=oneline --until="5 minutes ago"
+                <span>affiche les derniers commits dans les 5 dernieres minutes</span>
+            </p>
+            <p>
+                git log --pretty=oneline --author="Flavien Pesce"
+                <span>affiche les derniers commits dans les 5 dernieres minutes</span>
+            </p>
+            <p>
+                git log --oneline --all --pretty=format:"%h %cd %s (%an) %d" --since="1 days ago"
+                <span>affiche les derniers commits dans les 5 dernieres minutes</span>
+            </p>
 
-        impress().init();
-    </script>
+            <!-- layer 7 -->
+            <div id="layer-7" class="step slide" data-x="7000">
+                <h1>Format log</h1>
+                <ul>
+                    <li>--pretty="..." format de sortie</li>
+                    <li>%h abbreviation hash code commit</li>
+                    <li>%d commit decoration</li>
+                    <li>%ad commit date</li>
+                    <li>%s commentaires</li>
+                    <li>%an author name</li>
+                    <li>--graph commit tree</li>
+                    <li>--date=...</li>
+                </ul>
+            </div>
+
+            <!-- layer 8 -->
+            <div id="layer-8" class="step slide" data-x="8000">
+                <h1>Version...</h1>
+                <p>
+                    git tag
+                    <span>affichage des releases</span>
+                </p>
+                <p>
+                    git tag -a "your message"
+                    <span>creation d'une release</span>
+                </p>
+            </div>
+        </div>
+
+        <script src="node_modules/impress.js/js/impress.js"></script>
+        <script>
+            var rootElement = document.querySelector("#impress");
+            rootElement.addEventListener("impress:init", function () {
+                console.log("impress run")
+            })
+
+            impress().init();
+        </script>
 </body>
 
 </html>
